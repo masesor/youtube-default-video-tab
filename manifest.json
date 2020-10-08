@@ -1,0 +1,34 @@
+{
+  "name": "Youtube Default Videos Tab",
+  "author": "Sam Rose",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Automatically show the videos tab of a Youtube Channel",
+  "permissions": [
+    "webNavigation",
+    "tabs",
+    "activeTab",
+    "*://*.youtube.com/c/*",
+    "*://*.youtube.com/user/*",
+    "*://*.youtube.com/channel/*",
+    "*://*.youtube.com/*"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "20": "images/youtube-icon.png",
+      "40": "images/youtube-icon.png"
+    },
+    "default_title": "Youtube Default Videos Tab"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content_script.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
